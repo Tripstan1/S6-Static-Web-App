@@ -1,0 +1,400 @@
+<!DOCTYPE html>
+<html lang="nl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SouthSideIT | Full Catalog</title>
+    <style>
+        :root {
+            --primary: #004a99;
+            --secondary: #0078d4;
+            --dark: #201f1e;
+            --light: #f3f2f1;
+            --accent: #ffb900;
+        }
+
+        html { scroll-behavior: smooth; }
+
+        body {
+            font-family: 'Segoe UI', system-ui, -apple-system, sans-serif;
+            margin: 0;
+            background-color: var(--light);
+            color: var(--dark);
+        }
+
+        header {
+            background-color: var(--primary);
+            color: white;
+            padding: 1rem 5%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+        }
+
+        .logo { font-size: 1.5rem; font-weight: bold; letter-spacing: 1px; }
+        
+        nav a {
+            color: white;
+            text-decoration: none;
+            margin-left: 15px;
+            font-weight: 500;
+            font-size: 0.85rem;
+            text-transform: uppercase;
+        }
+
+        nav a:hover { color: var(--accent); }
+
+        .hero {
+            background: linear-gradient(rgba(0,74,153,0.85), rgba(0,74,153,0.85)), 
+                        url('https://images.unsplash.com/photo-1558494949-ef010cbdcc51?auto=format&fit=crop&w=1000&q=80');
+            background-size: cover;
+            color: white;
+            padding: 50px 5%;
+            text-align: center;
+        }
+
+        .container { padding: 20px 5% 60px; }
+        
+        .section-title {
+            border-left: 5px solid var(--accent);
+            padding-left: 15px;
+            margin: 50px 0 25px;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        .product-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+            gap: 20px;
+        }
+
+        .product-card {
+            background: white;
+            border-radius: 4px;
+            overflow: hidden;
+            transition: all 0.2s ease;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+            display: flex;
+            flex-direction: column;
+            border: 1px solid #e1e1e1;
+        }
+
+        .product-card:hover { 
+            transform: translateY(-3px); 
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+            border-color: var(--secondary);
+        }
+
+        .product-image {
+            height: 160px;
+            background-color: #fafafa;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 3.5rem;
+            border-bottom: 1px solid #f0f0f0;
+        }
+
+        .product-info { padding: 15px; flex-grow: 1; }
+        .product-info h3 { margin: 0 0 10px; font-size: 1.1rem; color: var(--primary); }
+        .product-info p { margin: 0; font-size: 0.85rem; color: #666; height: 40px; overflow: hidden; }
+        
+        .price {
+            color: var(--dark);
+            font-size: 1.1rem;
+            font-weight: bold;
+            display: block;
+            margin: 15px 0;
+        }
+
+        .btn-buy {
+            background-color: var(--secondary);
+            color: white;
+            border: none;
+            padding: 10px;
+            width: 100%;
+            border-radius: 2px;
+            cursor: pointer;
+            font-weight: 600;
+            transition: background 0.2s;
+        }
+
+        .btn-buy:hover { background-color: var(--primary); }
+
+        footer {
+            background: var(--dark);
+            color: #999;
+            padding: 40px 5% 20px;
+        }
+
+        .footer-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 40px;
+            margin-bottom: 30px;
+        }
+
+        .status-badge {
+            background: #27ae60;
+            color: white;
+            padding: 2px 8px;
+            border-radius: 3px;
+            font-size: 0.7rem;
+            vertical-align: middle;
+        }
+    </style>
+</head>
+<body>
+
+<header>
+    <div class="logo">SouthSideIT</div>
+    <nav>
+        <a href="#">Producten</a>
+        <a href="#">Mijn Bestellingen</a>
+        <a href="#">Winkelwagen (0)</a>
+    </nav>
+</header>
+<section class="hero">
+    <h1>Hardware Voorraadbeheer</h1>
+    <p>Real-time inzage in onze actuele enterprise voorraad.</p>
+</section>
+
+<div class="container">
+    
+    <h2 class="section-title" id="monitoren">Monitoren & Displays</h2>
+    <div class="product-grid">
+        <div class="product-card">
+            <div class="product-image">🖥️</div>
+            <div class="product-info">
+                <h3>UltraWide 34" Pro</h3>
+                <p>WQHD Curved, USB-C Docking.</p>
+                <span class="price">€ 649,00</span>
+                <button class="btn-buy" onclick="alert('Besteld')">Bestellen</button>
+            </div>
+        </div>
+        <div class="product-card">
+            <div class="product-image">📺</div>
+            <div class="product-info">
+                <h3>4K Designer 27"</h3>
+                <p>Hardware gekalibreerd, HDR1000.</p>
+                <span class="price">€ 899,00</span>
+                <button class="btn-buy" onclick="alert('Besteld')">Bestellen</button>
+            </div>
+        </div>
+        <div class="product-card">
+            <div class="product-image">📱</div>
+            <div class="product-info">
+                <h3>Portable 15" Display</h3>
+                <p>Lichtgewicht voor hybride werken.</p>
+                <span class="price">€ 199,00</span>
+                <button class="btn-buy" onclick="alert('Besteld')">Bestellen</button>
+            </div>
+        </div>
+        <div class="product-card">
+            <div class="product-image">🖥️</div>
+            <div class="product-info">
+                <h3>Office Standard 24"</h3>
+                <p>Full HD, Blauwlicht filter, In hoogte verstelbaar.</p>
+                <span class="price">€ 149,00</span>
+                <button class="btn-buy" onclick="alert('Besteld')">Bestellen</button>
+            </div>
+        </div>
+    </div>
+
+    <h2 class="section-title" id="servers">Enterprise Servers (vSphere Ready)</h2>
+    <div class="product-grid">
+        <div class="product-card">
+            <div class="product-image">🗄️</div>
+            <div class="product-info">
+                <h3>Rack Server R740</h3>
+                <p>2x Xeon Gold, 256GB RAM, 8-bay SFF.</p>
+                <span class="price">€ 4.850,00</span>
+                <button class="btn-buy" onclick="alert('Besteld')">Bestellen</button>
+            </div>
+        </div>
+        <div class="product-card">
+            <div class="product-image">📦</div>
+            <div class="product-info">
+                <h3>Tower T150</h3>
+                <p>Instapmodel voor lokale AD of File Server.</p>
+                <span class="price">€ 1.120,00</span>
+                <button class="btn-buy" onclick="alert('Besteld')">Bestellen</button>
+            </div>
+        </div>
+        <div class="product-card">
+            <div class="product-image">🧱</div>
+            <div class="product-info">
+                <h3>Blade Node B20</h3>
+                <p>High-density computing voor vCenter clusters.</p>
+                <span class="price">€ 3.400,00</span>
+                <button class="btn-buy" onclick="alert('Besteld')">Bestellen</button>
+            </div>
+        </div>
+        <div class="product-card">
+            <div class="product-image">⚙️</div>
+            <div class="product-info">
+                <h3>Micro Edge Server</h3>
+                <p>Fanless design voor industriële omgevingen.</p>
+                <span class="price">€ 750,00</span>
+                <button class="btn-buy" onclick="alert('Besteld')">Bestellen</button>
+            </div>
+        </div>
+    </div>
+
+    <h2 class="section-title" id="cpugpu">Processoren & Grafisch</h2>
+    <div class="product-grid">
+        <div class="product-card">
+            <div class="product-image">🔲</div>
+            <div class="product-info">
+                <h3>Intel Core i9-14900K</h3>
+                <p>24 Cores, 6.0 GHz Turbo.</p>
+                <span class="price">€ 619,00</span>
+                <button class="btn-buy" onclick="alert('Besteld')">Bestellen</button>
+            </div>
+        </div>
+        <div class="product-card">
+            <div class="product-image">🧠</div>
+            <div class="product-info">
+                <h3>AMD Ryzen 9 7950X</h3>
+                <p>16 Cores, 32 Threads, PCIe 5.0.</p>
+                <span class="price">€ 549,00</span>
+                <button class="btn-buy" onclick="alert('Besteld')">Bestellen</button>
+            </div>
+        </div>
+        <div class="product-card">
+            <div class="product-image">🏎️</div>
+            <div class="product-info">
+                <h3>NVIDIA RTX 4090</h3>
+                <p>24GB GDDR6X, AI & Raytracing.</p>
+                <span class="price">€ 1.949,00</span>
+                <button class="btn-buy" onclick="alert('Besteld')">Bestellen</button>
+            </div>
+        </div>
+        <div class="product-card">
+            <div class="product-image">🛠️</div>
+            <div class="product-info">
+                <h3>NVIDIA RTX A6000</h3>
+                <p>Workstation GPU voor CAD/Rendering.</p>
+                <span class="price">€ 4.200,00</span>
+                <button class="btn-buy" onclick="alert('Besteld')">Bestellen</button>
+            </div>
+        </div>
+        <div class="product-card">
+            <div class="product-image">📟</div>
+            <div class="product-info">
+                <h3>Intel Xeon Silver</h3>
+                <p>Scalable 12-Core Server CPU.</p>
+                <span class="price">€ 890,00</span>
+                <button class="btn-buy" onclick="alert('Besteld')">Bestellen</button>
+            </div>
+        </div>
+    </div>
+
+    <h2 class="section-title" id="netwerk">Networking & Security</h2>
+    <div class="product-grid">
+        <div class="product-card">
+            <div class="product-image">🚥</div>
+            <div class="product-info">
+                <h3>48-Port L3 Switch</h3>
+                <p>Managed Gigabit, 4x SFP+ 10G.</p>
+                <span class="price">€ 940,00</span>
+                <button class="btn-buy" onclick="alert('Besteld')">Bestellen</button>
+            </div>
+        </div>
+        <div class="product-card">
+            <div class="product-image">🌐</div>
+            <div class="product-info">
+                <h3>Hybrid Router Pro</h3>
+                <p>VPN, SD-WAN, Azure ExpressRoute ready.</p>
+                <span class="price">€ 425,00</span>
+                <button class="btn-buy" onclick="alert('Besteld')">Bestellen</button>
+            </div>
+        </div>
+        <div class="product-card">
+            <div class="product-image">📡</div>
+            <div class="product-info">
+                <h3>WiFi 6E Access Point</h3>
+                <p>Triband Enterprise Wireless.</p>
+                <span class="price">€ 310,00</span>
+                <button class="btn-buy" onclick="alert('Besteld')">Bestellen</button>
+            </div>
+        </div>
+        <div class="product-card">
+            <div class="product-image">🛡️</div>
+            <div class="product-info">
+                <h3>Next-Gen Firewall</h3>
+                <p>IPS/IDS, Deep Packet Inspection.</p>
+                <span class="price">€ 1.250,00</span>
+                <button class="btn-buy" onclick="alert('Besteld')">Bestellen</button>
+            </div>
+        </div>
+        <div class="product-card">
+            <div class="product-image">🔌</div>
+            <div class="product-info">
+                <h3>24-Port PoE+ Switch</h3>
+                <p>Ideaal voor camera's en VOIP.</p>
+                <span class="price">€ 580,00</span>
+                <button class="btn-buy" onclick="alert('Besteld')">Bestellen</button>
+            </div>
+        </div>
+    </div>
+
+</div>
+
+<footer>
+    <div class="footer-grid">
+        <div>
+            <h4>SouthSideIT Warehouse</h4>
+            <p>Logistiek centrum voor zakelijke IT-hardware en hybride cloud integraties.</p>
+        </div>
+        <div>
+            <h4>Status Paneel</h4>
+            <p>Azure Gateway: <span class="status-badge">ONLINE</span></p>
+            <p>vSphere Sync: <span class="status-badge">STABLE</span></p>
+        </div>
+    </div>
+    <div style="text-align: center; border-top: 1px solid #333; padding-top: 20px;">
+        <small>&copy; 2026 SouthSideIT Webshop - Tristan Stakenborg S6</small>
+    </div>
+</footer>
+
+</body>
+</html>
+
+<script>
+    // Initialiseer de winkelwagen vanuit LocalStorage of begin leeg
+    let cart = JSON.parse(localStorage.getItem('southside_cart')) || [];
+
+    function updateCartCount() {
+        const count = cart.reduce((total, item) => total + item.qty, 0);
+        document.getElementById('cart-count').innerText = `Winkelwagen (${count})`;
+    }
+
+    function addToCart(name, price) {
+        const existingItem = cart.find(item => item.name === name);
+        if (existingItem) {
+            existingItem.qty += 1;
+        } else {
+            cart.push({ name: name, price: price, qty: 1 });
+        }
+        
+        // Opslaan in browser geheugen
+        localStorage.setItem('southside_cart', JSON.stringify(cart));
+        updateCartCount();
+        
+        // Kleine visuele feedback
+        alert(`${name} is toegevoegd aan de winkelwagen!`);
+    }
+
+    // Update teller bij laden van pagina
+    window.onload = updateCartCount;
+</script>
+
+<a href="cart.html" id="cart-count">Winkelwagen (0)</a>
+
+<button class="btn-buy" onclick="addToCart('UltraWide 34 Pro', 649)">Bestellen</button>
